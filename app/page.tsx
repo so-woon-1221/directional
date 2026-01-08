@@ -6,12 +6,12 @@ export default function Home() {
     <div className="flex min-h-[calc(100dvh-4rem)] items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Directional</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">대시보드</h1>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <Link
-            href="/table"
+            href="/posts"
             className="group block p-8 bg-white rounded-xl border border-gray-200 hover:border-blue-500 transition-all hover:shadow-lg"
           >
             <div className="flex items-center gap-3">
@@ -19,7 +19,7 @@ export default function Home() {
                 <Table />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                Table View
+                Posts
               </h2>
             </div>
           </Link>
@@ -33,7 +33,7 @@ export default function Home() {
                 <ChartBar />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                Chart View
+                Chart
               </h2>
             </div>
           </Link>
