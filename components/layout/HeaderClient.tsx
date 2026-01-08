@@ -11,7 +11,7 @@ interface HeaderClientProps {
 export default function HeaderClient({ isLoggedIn }: HeaderClientProps) {
   const pathname = usePathname();
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname.startsWith(path);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -22,7 +22,7 @@ export default function HeaderClient({ isLoggedIn }: HeaderClientProps) {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600">
               <LayoutDashboard className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">Dashboard</span>
+            <span className="text-xl font-bold text-gray-900">디렉셔널</span>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -43,9 +43,6 @@ export default function HeaderClient({ isLoggedIn }: HeaderClientProps) {
                   <Table className="h-4 w-4" />
                   Posts
                 </span>
-                {isActive("/posts") && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
-                )}
               </Link>
 
               <Link
@@ -63,9 +60,6 @@ export default function HeaderClient({ isLoggedIn }: HeaderClientProps) {
                   <ChartBar className="h-4 w-4" />
                   Chart
                 </span>
-                {isActive("/chart") && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600" />
-                )}
               </Link>
             </nav>
 
